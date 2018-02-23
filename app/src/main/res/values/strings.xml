@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CustomNavigationDrawer</string>
+    <color name="statusColor">#ffffff</color>
+</resources>
