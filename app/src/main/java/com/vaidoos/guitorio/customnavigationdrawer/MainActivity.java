@@ -17,8 +17,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -111,21 +113,114 @@ public class MainActivity extends AppCompatActivity {
             layoutContainer.animate().scaleX(0.8f).scaleY(0.8f).translationX(600).getStartDelay();
             //handleAnimation(view);
             Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.animation_resource);
+
             //animation.setInterpolator(new AccelerateDecelerateInterpolator());
 
-            //circleImageView.animate().alpha(0).alphaBy(1).translationY(0).translationYBy(300).getStartDelay();
+            //circleImageView.animate().alpha(0).alphaBy(1).translationY(-200).setStartDelay(500).start();
+            //circleImageView.animate().alpha(1);//.alphaBy(1).translationY(-200).setStartDelay(500).start();
+
+
+            circleImageView.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    circleImageView.animate().alpha(1).translationY(0).setDuration(500).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();
+
+
+            tvNameUser.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvNameUser.animate().alpha(1).translationY(0).setDuration(600).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();
+
+            tvLocationName.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvLocationName.animate().alpha(1).translationY(0).setDuration(700).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();
+
+            tvCreditCards.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvCreditCards.animate().alpha(1).translationY(0).setDuration(800).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();
+
+            tvBills.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvBills.animate().alpha(1).translationY(0).setDuration(900).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();
+
+            /*tvBills.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvCreditCards.animate().alpha(1).translationY(0).setDuration(800).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();*/
+
+            tvSmallLoad.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvSmallLoad.animate().alpha(1).translationY(0).setDuration(1000).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();
+
+            tvInformation.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvInformation.animate().alpha(1).translationY(0).setDuration(1100).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();
+
+            tvInformation.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvInformation.animate().alpha(1).translationY(0).setDuration(1200).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();
+
+            tvSetUp.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvSetUp.animate().alpha(1).translationY(0).setDuration(1300).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();
+
+            tvSignOut.animate().alpha(0).translationY(200).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvSignOut.animate().alpha(1).translationY(0).setDuration(1300).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();
+
+            /*tvSignOut.animate().alpha(0).translationY(100).setDuration(0).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                @Override
+                public void run() {
+                    tvBills.animate().alpha(1).translationY(0).setDuration(900).setInterpolator(new AccelerateInterpolator()).start();
+                }
+            }).start();*/
+
+
+
+
 
             //tvNameUser,tvLocationName,tvBills,tvSmallLoad,tvInformation,tvSetUp,tvSignOut
 
-            circleImageView.startAnimation(animation);
-            tvNameUser.startAnimation(animation);
+            //circleImageView.startAnimation(animation);
+
+            /*tvNameUser.startAnimation(animation);
             tvLocationName.startAnimation(animation);
             tvCreditCards.startAnimation(animation);
             tvBills.startAnimation(animation);
             tvSmallLoad.startAnimation(animation);
             tvInformation.startAnimation(animation);
             tvSetUp.startAnimation(animation);
-            tvSignOut.startAnimation(animation);
+            tvSignOut.startAnimation(animation);*/
 
 
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
