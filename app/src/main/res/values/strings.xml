@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">CustomNavigationDrawer</string>
+    <string name="app_name">Reside Drawer with Custom RsaecyclerView</string>
     <color name="statusColor">#ffffff</color>
 </resources>

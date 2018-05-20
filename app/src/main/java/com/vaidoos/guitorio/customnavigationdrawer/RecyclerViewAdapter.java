@@ -6,8 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
+
+import es.dmoral.toasty.Toasty;
 
 /**
  * Created by Guitorio on 2/21/2018.
@@ -38,14 +41,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolderCardItem holder, int position) {
+    public void onBindViewHolder(final MyViewHolderCardItem holder, final int position) {
 
-        CardDetail cardDetail = cardDetailList.get(position);
+        final CardDetail cardDetail = cardDetailList.get(position);
 
         holder.tvRemainingBalanceDigit.setText(cardDetail.getTvRemainingBalanceDigit());
         holder.cardNumerFirstFourDig.setText(cardDetail.getCardNumerFirstFourDig());
         holder.cardNumerLastFourDig.setText(cardDetail.getCardNumerLastFourDig());
         holder.validationDate.setText(cardDetail.getValidationDate());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(context, "Validation Date is: "+cardDetail.getValidationDate(), Toast.LENGTH_SHORT).show();
+                Toasty.info(context, "Validation Date is: "+cardDetail.getValidationDate(), Toast.LENGTH_SHORT, true).show();
+            }
+        });
 
 
         if (position > previousPosition) { // We are scrolling DOWN

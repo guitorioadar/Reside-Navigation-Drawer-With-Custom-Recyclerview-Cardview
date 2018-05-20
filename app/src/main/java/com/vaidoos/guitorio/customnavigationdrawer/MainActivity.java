@@ -13,6 +13,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private CircleImageView circleImageView;
 
+    private final String TAG = "MainActivity";
 
 
 
@@ -335,9 +337,9 @@ public class MainActivity extends AppCompatActivity {
                 "status_bar_height", "dimen", "android");
         if (idStatusBarHeight > 0) {
             height = getResources().getDimensionPixelSize(idStatusBarHeight);
-            Toast.makeText(this,
-                    "Status Bar Height = " + height,
-                    Toast.LENGTH_LONG).show();
+            Log.d(TAG, "getStatusBarHeight: Status Bar Height: "+height);
+            //Toast.makeText(this,"Status Bar Height = " + height,Toast.LENGTH_LONG).show();
+
         }else{
             height = 0;
             Toast.makeText(this,

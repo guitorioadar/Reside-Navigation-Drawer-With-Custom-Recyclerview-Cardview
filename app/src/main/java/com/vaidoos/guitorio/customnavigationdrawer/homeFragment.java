@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,8 @@ import java.util.List;
 public class homeFragment extends Fragment {
 
     private RecyclerView recyclerviewCardDetail;
+
+    private final String TAG = "HomeFragment";
 
     private RecyclerViewAdapter recyclerViewAdapter;
 
@@ -60,7 +63,8 @@ public class homeFragment extends Fragment {
         int idStatusBarHeight = myResources.getIdentifier("status_bar_height", "dimen", "android");
         if (idStatusBarHeight > 0) {
             height = getResources().getDimensionPixelSize(idStatusBarHeight);
-            Toast.makeText(getActivity(),"Status Bar Height = " + height,Toast.LENGTH_LONG).show();
+            Log.d(TAG, "onCreateView: ");
+            //Toast.makeText(getActivity(),"Status Bar Height = " + height,Toast.LENGTH_LONG).show();
         }else{
             height = 0;
             Toast.makeText(getActivity(),"Resources NOT found",Toast.LENGTH_LONG).show();
