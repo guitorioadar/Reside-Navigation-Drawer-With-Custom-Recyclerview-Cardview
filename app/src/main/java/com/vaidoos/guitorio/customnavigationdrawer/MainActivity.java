@@ -91,8 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
         setfragment(homeFrag);
 
-
-
     }
 
     private void setfragment(Fragment fragment) {
