@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CustomNavigationDrawer.iml" filepath="$PROJECT_DIR$/CustomNavigationDrawer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Reside-Navigation-Drawer-With-Custom-Recyclerview-Cardview.iml" filepath="$PROJECT_DIR$/.idea/Reside-Navigation-Drawer-With-Custom-Recyclerview-Cardview.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

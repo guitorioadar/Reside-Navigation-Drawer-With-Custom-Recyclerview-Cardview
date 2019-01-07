@@ -30,9 +30,8 @@ public class NewDrawerActivity extends AppCompatActivity {
         toggle.syncState();
 
         drawer.setViewScale(Gravity.START,0.9f);
+        drawer.setRadius(Gravity.START, 35);
         drawer.setViewElevation(Gravity.START, 20);
-
-
 
         btnButtonNotification = findViewById(R.id.btnButtonNotification);
 
@@ -42,7 +41,5 @@ public class NewDrawerActivity extends AppCompatActivity {
                 Snackbar.make(btnButtonNotification,"Clicked",Snackbar.LENGTH_SHORT).show();
             }
         });
-
-
     }
 }
